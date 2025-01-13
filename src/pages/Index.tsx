@@ -36,13 +36,13 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 p-4 md:p-6">
+    <div className="min-h-screen bg-gradient-to-b from-background to-background/80 p-4 md:p-6">
       <MainSidebar />
-      <div className="max-w-md mx-auto space-y-8">
-        <Card className="border-none shadow-lg bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg">
+      <div className="max-w-md mx-auto space-y-8 animate-fade-in">
+        <Card className="border-none shadow-lg bg-background/80 backdrop-blur-lg hover:shadow-xl transition-all duration-300">
           <CardHeader className="space-y-1">
             <CardTitle className="text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text text-transparent">
-              QuickChat Direct
+              No Strings Chat
             </CardTitle>
             <CardDescription>
               Connect instantly via WhatsApp without saving contacts
@@ -50,7 +50,7 @@ const Index = () => {
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-4">
-              <div>
+              <div className="transition-all duration-200 hover:scale-[1.02]">
                 <PhoneInput
                   country={"us"}
                   value={phoneNumber}
@@ -61,7 +61,7 @@ const Index = () => {
                   dropdownClass="!bg-popover !border-input"
                 />
               </div>
-              <div className="relative">
+              <div className="relative transition-all duration-200 hover:scale-[1.02]">
                 <MessageSquare className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                 <textarea
                   placeholder="Type your message (optional)"
@@ -75,7 +75,7 @@ const Index = () => {
             <div className="space-y-3">
               <Button
                 onClick={() => handleWhatsAppRedirect(false)}
-                className="w-full bg-[#25D366] hover:bg-[#20BD5A] text-white"
+                className="w-full bg-[#25D366] hover:bg-[#20BD5A] text-white transition-transform hover:scale-105"
               >
                 <Send className="mr-2 h-5 w-5" />
                 Open in WhatsApp
@@ -83,7 +83,7 @@ const Index = () => {
               <Button
                 onClick={() => handleWhatsAppRedirect(true)}
                 variant="outline"
-                className="w-full border-[#25D366] text-[#25D366] hover:bg-[#25D366]/10"
+                className="w-full border-[#25D366] text-[#25D366] hover:bg-[#25D366]/10 transition-transform hover:scale-105"
               >
                 <Send className="mr-2 h-5 w-5" />
                 Open in WhatsApp Business
@@ -92,7 +92,7 @@ const Index = () => {
           </CardContent>
         </Card>
 
-        <div className="text-center text-sm text-gray-500 dark:text-gray-400">
+        <div className="text-center text-sm text-muted-foreground animate-fade-in">
           Your privacy is our priority. We don't store any of your data.
         </div>
       </div>
