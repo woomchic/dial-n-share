@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, MessageSquare, Send, Menu } from "lucide-react";
+import { Phone, MessageSquare, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -10,6 +10,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { MainSidebar } from "@/components/MainSidebar";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 const Index = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -34,6 +37,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 p-4 md:p-6">
+      <MainSidebar />
       <div className="max-w-md mx-auto space-y-8">
         <Card className="border-none shadow-lg bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg">
           <CardHeader className="space-y-1">
@@ -46,14 +50,15 @@ const Index = () => {
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-4">
-              <div className="relative">
-                <Phone className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
-                <Input
-                  type="tel"
-                  placeholder="Enter phone number with country code"
+              <div>
+                <PhoneInput
+                  country={"us"}
                   value={phoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
-                  className="pl-10"
+                  onChange={setPhoneNumber}
+                  inputClass="!w-full !h-10 !pl-12 !rounded-md !border-input !bg-background !text-foreground"
+                  containerClass="!w-full"
+                  buttonClass="!border-input !bg-background !rounded-l-md"
+                  dropdownClass="!bg-popover !border-input"
                 />
               </div>
               <div className="relative">
