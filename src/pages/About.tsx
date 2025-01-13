@@ -11,31 +11,30 @@ export default function About() {
             </CardTitle>
           </CardHeader>
           <CardContent className="prose dark:prose-invert max-w-none space-y-6">
-            <p className="text-lg leading-relaxed">
-              No Strings Chat is a revolutionary web application that simplifies your WhatsApp communication. 
-              Our platform allows you to initiate WhatsApp conversations without the need to save phone numbers 
-              to your contacts, making business and personal communication more efficient than ever.
-            </p>
+            <section className="space-y-4">
+              <h2 className="text-xl font-semibold">Our Mission</h2>
+              <p className="text-muted-foreground">
+                No Strings Chat was created with a simple goal: to make WhatsApp communication 
+                easier and more efficient. We understand the need for quick, hassle-free 
+                conversations without the requirement of saving phone numbers.
+              </p>
+            </section>
             
-            <h2 className="text-xl font-semibold mt-6">Key Features</h2>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Start chats without saving contacts</li>
-              <li>Support for both WhatsApp and WhatsApp Business</li>
-              <li>International country code selection</li>
-              <li>Message templates for quick communication</li>
-              <li>Dark mode support for comfortable viewing</li>
-              <li>Responsive design for all devices</li>
-            </ul>
+            <section className="space-y-4">
+              <h2 className="text-xl font-semibold">How It Works</h2>
+              <p className="text-muted-foreground">
+                Simply enter a phone number, type your message (if desired), and click to open 
+                WhatsApp. No contact saving required, no personal data stored. It's that simple!
+              </p>
+            </section>
             
-            <h2 className="text-xl font-semibold mt-6">Our Mission</h2>
-            <p className="text-lg leading-relaxed">
-              We believe in making communication simpler and more accessible. Our mission is to provide a 
-              seamless bridge between you and your WhatsApp contacts, eliminating unnecessary steps in the process.
-            </p>
-            
-            <div className="mt-8 text-sm text-muted-foreground">
-              Version 1.0.0
-            </div>
+            <section className="space-y-4">
+              <h2 className="text-xl font-semibold">Privacy First</h2>
+              <p className="text-muted-foreground">
+                We prioritize your privacy. No Strings Chat doesn't store any personal information 
+                or phone numbers. Everything happens right in your browser.
+              </p>
+            </section>
           </CardContent>
         </Card>
       </div>

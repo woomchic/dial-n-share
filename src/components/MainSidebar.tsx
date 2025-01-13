@@ -38,11 +38,11 @@ export function MainSidebar() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="fixed top-4 left-4 z-50">
+        <Button variant="ghost" size="icon" className="fixed top-4 left-4 z-50 hover-scale">
           <Menu className="h-6 w-6" />
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-[300px] bg-background/95 backdrop-blur-lg">
+      <SheetContent side="left" className="w-[300px] glass-morphism">
         <SheetHeader>
           <SheetTitle className="text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text text-transparent animate-fade-in">
             No Strings Chat
@@ -53,7 +53,7 @@ export function MainSidebar() {
             <Link key={item.path} to={item.path}>
               <Button
                 variant="ghost"
-                className="w-full justify-start text-lg font-normal hover:scale-105 transition-transform"
+                className="w-full justify-start text-lg font-normal hover-scale"
               >
                 <item.icon className="mr-3 h-5 w-5" />
                 {item.label}
@@ -62,7 +62,7 @@ export function MainSidebar() {
           ))}
           <Button
             variant="ghost"
-            className="w-full justify-start text-lg font-normal hover:scale-105 transition-transform"
+            className="w-full justify-start text-lg font-normal hover-scale"
             onClick={handleShare}
           >
             <Share2 className="mr-3 h-5 w-5" />
@@ -70,7 +70,7 @@ export function MainSidebar() {
           </Button>
           <Button
             variant="ghost"
-            className="w-full justify-start text-lg font-normal hover:scale-105 transition-transform"
+            className="w-full justify-start text-lg font-normal hover-scale"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           >
             {theme === "dark" ? (
